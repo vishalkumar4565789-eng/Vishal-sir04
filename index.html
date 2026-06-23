@@ -1,266 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trending with MUNAAF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Credit - Apply Now</title>
+    <!-- Google Fonts for premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            /* Purple gradient background inspired by 1000150066.png */
+            background: linear-gradient(135deg, #6c5ce7 0%, #5f27cd 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        .landing-card {
+            background-color: #ffffff;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 420px;
+            padding: 35px 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
+        /* Logo/Icon Container */
+        .logo-container {
+            width: 90px;
+            height: 90px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 0 0 10px rgba(108, 92, 231, 0.05);
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:40px 8%;
-position:relative;
-background:
-radial-gradient(circle at top right,#00ff9d20,transparent 35%),
-radial-gradient(circle at bottom left,#3b82f620,transparent 35%),
-#050816;
-}
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background-color: #6c5ce7;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
 
-.hero::before{
-content:'';
-position:absolute;
-width:350px;
-height:350px;
-background:#00ff9d;
-filter:blur(180px);
-opacity:.15;
-top:-80px;
-right:-100px;
-}
+        h1 {
+            color: #1e272e;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-.hero-content{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
 
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-border-radius:50px;
-font-size:14px;
-color:#00ff9d;
-margin-bottom:25px;
-}
+        /* Steps Styling */
+        .steps-container {
+            text-align: left;
+            margin-bottom: 35px;
+        }
 
-h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
-}
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-.highlight{
-background:linear-gradient(90deg,#00ff9d,#38bdf8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background-color: rgba(108, 92, 231, 0.15);
+            color: #6c5ce7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
 
-.hero p{
-font-size:18px;
-line-height:1.8;
-color:#b5bfd1;
-margin-bottom:30px;
-}
+        .step-content h3 {
+            color: #2c3e50;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
 
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+        .step-content p {
+            color: #95a5a6;
+            font-size: 12px;
+            line-height: 1.4;
+        }
 
-.btn{
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background-color: #6c5ce7;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            margin-bottom: 15px;
+        }
 
-.primary{
-background:linear-gradient(90deg,#00ff9d,#00d084);
-color:#000;
-}
+        .cta-btn:hover {
+            background-color: #5f27cd;
+            transform: translateY(-2px);
+        }
 
-.secondary{
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.05);
-color:#fff;
-}
+        .cta-btn:active {
+            transform: translateY(0);
+        }
 
-.btn:hover{
-transform:translateY(-4px);
-}
+        /* Footer Info */
+        .secure-text {
+            color: #95a5a6;
+            font-size: 11px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 4px;
+        }
 
-.stats{
-display:flex;
-gap:30px;
-margin-top:40px;
-flex-wrap:wrap;
-}
+        .secure-icon {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #95a5a6;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .secure-icon::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 5px;
+            border: 1.5px solid #95a5a6;
+            border-bottom: none;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            top: -5px;
+            left: 1.5px;
+        }
 
-.stat h2{
-color:#00ff9d;
-font-size:32px;
-}
-
-.stat p{
-margin-top:5px;
-font-size:14px;
-color:#a5afc1;
-}
-
-.card{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,255,157,.08);
-}
-
-.card h3{
-margin-bottom:20px;
-color:#00ff9d;
-}
-
-.list{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.list div{
-padding:15px;
-background:rgba(255,255,255,.04);
-border-radius:12px;
-}
-
-.live{
-margin-top:25px;
-padding:18px;
-background:linear-gradient(90deg,#00ff9d20,#38bdf820);
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-@media(max-width:900px){
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.buttons{
-justify-content:center;
-}
-
-.stats{
-justify-content:center;
-}
-
-h1{
-font-size:42px;
-}
-}
-</style>
+        .footer-note {
+            color: #bdc3c7;
+            font-size: 11px;
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+    <div class="landing-card">
+        <!-- App Logo Area -->
+        <div class="logo-container">
+            <div class="logo-icon">LC</div>
+        </div>
 
-<div class="hero-content">
+        <!-- Heading & Subtitle -->
+        <h1>Apply Now & Get Money</h1>
+        <p class="subtitle">Just 3 simple steps to approve your amount.</p>
 
-<div>
+        <!-- Steps -->
+        <div class="steps-container">
+            <!-- Step 1 -->
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download App</h3>
+                    <p>Get the official Low Credit app from the link below</p>
+                </div>
+            </div>
 
-<div class="badge">
-🚀 India's Fast Growing Trading Community
-</div>
+            <!-- Step 2 -->
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Quick Registration</h3>
+                    <p>Create account & complete basic KYC</p>
+                </div>
+            </div>
 
-<h1>
-Trade Smarter With
-<span class="highlight">MUNAAF</span>
-</h1>
+            <!-- Step 3 -->
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Receive Amount</h3>
+                    <p>Get money directly in your bank account</p>
+                </div>
+            </div>
+        </div>
 
-<p>
-Get daily stock market insights, trending stocks, breakout opportunities,
-swing trading ideas, intraday setups and risk management strategies
-from experienced traders.
-</p>
+        <!-- Action Button -->
+        <a href="https://quickcreditapp.space-z.ai/" class="cta-btn">Download App Now</a>
 
-<div class="buttons">
-<a href="https://t.me/+guLvlUgEjtNmZTQ1" class="btn primary">
-Join Telegram
-</a>
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>10K+</h2>
-<p>Active Traders</p>
-</div>
-
-<div class="stat">
-<h2>500+</h2>
-<p>Market Updates</p>
-</div>
-
-<div class="stat">
-<h2>95%</h2>
-<p>Community Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>📈 What You'll Get</h3>
-
-<div class="list">
-<div>🔥 Trending Stocks Daily</div>
-<div>📊 Technical Analysis</div>
-<div>💰 Swing Trading Ideas</div>
-<div>⚡ Intraday Setups</div>
-<div>🛡️ Risk Management</div>
-<div>🎯 Trading Psychology</div>
-</div>
-
-<div class="live">
-<b>LIVE MARKET EDGE</b><br>
-Daily actionable insights delivered directly to our community.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+        <!-- Trust Badges -->
+        <div class="secure-text">
+            <span class="secure-icon"></span> 100% Secure Download
+        </div>
+        <p class="footer-note">Click to download and start your application</p>
+    </div>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1017390771042570');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1017390771042570&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
