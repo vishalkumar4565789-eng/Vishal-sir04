@@ -1,254 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Low Credit - Apply Now</title>
-    <!-- Google Fonts for premium look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Trading Course Landing Page</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            /* Purple gradient background inspired by 1000150066.png */
-            background: linear-gradient(135deg, #6c5ce7 0%, #5f27cd 100%);
-            min-height: 100vh;
+            background-color: #0b0c10;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        .landing-card {
-            background-color: #ffffff;
-            border-radius: 30px;
+        .container {
             width: 100%;
-            max-width: 420px;
-            padding: 35px 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            background-color: #000000;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Header Styling */
+        .header-title {
+            color: #34b3e4;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        /* Profile Image Styling */
+        .profile-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(45deg, #a8329b, #324fa8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            margin: 20px 0;
+        }
+
+        /* Features List Styling */
+        .features-list {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            color: #76ff03;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item span {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        /* Buttons Styling */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            background: linear-gradient(to right, #9c27b0, #00bcd4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* Timer Styling */
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .timer-box {
             text-align: center;
         }
 
-        /* Logo/Icon Container */
-        .logo-container {
-            width: 90px;
-            height: 90px;
-            background: rgba(108, 92, 231, 0.1);
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            box-shadow: 0 0 0 10px rgba(108, 92, 231, 0.05);
-        }
-
-        .logo-icon {
-            width: 55px;
-            height: 55px;
-            background-color: #6c5ce7;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
-        }
-
-        h1 {
-            color: #1e272e;
+        .timer-num {
+            color: #ff0000;
             font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-weight: bold;
+            font-family: monospace;
         }
 
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 13px;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        /* Steps Styling */
-        .steps-container {
-            text-align: left;
-            margin-bottom: 35px;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .step-number {
-            width: 32px;
-            height: 32px;
-            background-color: rgba(108, 92, 231, 0.15);
-            color: #6c5ce7;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-            font-size: 14px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            color: #2c3e50;
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .step-content p {
-            color: #95a5a6;
-            font-size: 12px;
-            line-height: 1.4;
-        }
-
-        /* CTA Button */
-        .cta-btn {
-            display: block;
-            width: 100%;
-            background-color: #6c5ce7;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 16px;
-            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            margin-bottom: 15px;
-        }
-
-        .cta-btn:hover {
-            background-color: #5f27cd;
-            transform: translateY(-2px);
-        }
-
-        .cta-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Footer Info */
-        .secure-text {
-            color: #95a5a6;
+        .timer-label {
+            color: #8b0000;
             font-size: 11px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 4px;
         }
 
-        .secure-icon {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border: 1.5px solid #95a5a6;
-            border-radius: 3px;
-            position: relative;
-        }
-        
-        .secure-icon::before {
-            content: '';
-            position: absolute;
-            width: 6px;
-            height: 5px;
-            border: 1.5px solid #95a5a6;
-            border-bottom: none;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            top: -5px;
-            left: 1.5px;
-        }
-
-        .footer-note {
-            color: #bdc3c7;
-            font-size: 11px;
+        .timer-colon {
+            color: #ff0000;
+            font-size: 24px;
+            font-weight: bold;
+            align-self: flex-start;
         }
     </style>
 </head>
 <body>
 
-    <div class="landing-card">
-        <!-- App Logo Area -->
-        <div class="logo-container">
-            <div class="logo-icon">LC</div>
+    <div class="container">
+        <!-- Header Text -->
+        <div class="header-title">
+            Learn Before You Trade<br>Smart Traders Keep Learning
         </div>
 
-        <!-- Heading & Subtitle -->
-        <h1>Apply Now & Get Money</h1>
-        <p class="subtitle">Just 3 simple steps to approve your amount.</p>
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <!-- Aap yahan apni image lagane ke liye src badal sakte hain -->
+            <img src="https://i.ibb.co/FLPgSBHk/Tu-Q5o-VVl-Wgq-Es-Mq8s-R-2hrw6z-4-CQym-G1-ALaj-CU5jp-Ww-YLd4g618x-YBA7o68d-Oy-XHCSPC6ja-Synh-Uu-Pj-R3-W.jpg" alt="Purab Darda ( SEBI REGISTERED )">
+        </div>
+        <div class="profile-name">Purab Darda ( SEBI REGISTERED )</div>
 
-        <!-- Steps -->
-        <div class="steps-container">
-            <!-- Step 1 -->
-            <div class="step-item">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Download App</h3>
-                    <p>Get the official Low Credit app from the link below</p>
-                </div>
-            </div>
+        <hr>
 
-            <!-- Step 2 -->
-            <div class="step-item">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Quick Registration</h3>
-                    <p>Create account & complete basic KYC</p>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-item">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Receive Amount</h3>
-                    <p>Get money directly in your bank account</p>
-                </div>
-            </div>
+        <!-- Features Bullet Points -->
+        <div class="features-list">
+            <div class="feature-item"><span>✔</span> Market Basics</div>
+            <div class="feature-item"><span>✔</span> Chart Reading</div>
+            <div class="feature-item"><span>✔</span> Trend Analysis</div>
+            <div class="feature-item"><span>✔</span> Educational Discussions</div>
         </div>
 
-        <!-- Action Button -->
-        <a href="https://quickcreditapp.space-z.ai/" class="cta-btn">Download App Now</a>
+        <hr>
 
-        <!-- Trust Badges -->
-        <div class="secure-text">
-            <span class="secure-icon"></span> 100% Secure Download
+        <!-- CTA Buttons -->
+        <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn">JOIN TELEGRAMM GROUPS</a>
+        <a href="https://t.me/+Z7bTtxu4N4ZhNThl
+            " class="btn">JOIN TELEGRAMM GROUPS</a>
+
+        <!-- Countdown Timer -->
+        <div class="timer-container">
+            <div class="timer-box">
+                <div class="timer-num" id="days">00</div>
+                <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+                <div class="timer-num" id="hours">00</div>
+                <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+                <div class="timer-num" id="minutes">00</div>
+                <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+                <div class="timer-num" id="seconds">24</div>
+                <div class="timer-label">Seconds</div>
+            </div>
         </div>
-        <p class="footer-note">Click to download and start your application</p>
     </div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1007136685239490');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1007136685239490&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+    <!-- JavaScript for 24-Second Loop Timer -->
+    <script>
+        let timeLeft = 24;
+        const secondsElement = document.getElementById('seconds');
+
+        setInterval(() => {
+            if (timeLeft <= 0) {
+                timeLeft = 24; // Timer khatam hone par wapas 24 se start hoga
+            } else {
+                timeLeft--;
+            }
+            secondsElement.innerText = timeLeft < 10 ? '0' + timeLeft : timeLeft;
+        }, 1000);
+    </script>
+
 </body>
 </html>
