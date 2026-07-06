@@ -1,19 +1,29 @@
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Course Landing Page</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #0b0c10;
+            background-color: #11161a;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -23,206 +33,321 @@
         }
 
         .container {
+            max-width: 480px;
             width: 100%;
-            max-width: 450px;
-            background-color: #000000;
-            text-align: center;
+            background: #17212b;
+            border-radius: 24px;
             padding: 30px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* Header Styling */
-        .header-title {
-            color: #34b3e4;
-            font-size: 22px;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 25px;
+        /* Profile/Logo Section */
+        .logo-container {
+            margin-bottom: 15px;
         }
 
-        /* Profile Image Styling */
-        .profile-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 15px;
+        .logo-circle {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            overflow: hidden;
-            background: linear-gradient(45deg, #a8329b, #324fa8);
+            border: 3px solid #2ecc71;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #0f141c;
+            overflow: hidden;
         }
 
-        .profile-container img {
+        .logo-circle img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* इससे आपकी फोटो सर्कल में पूरी तरह फिट बैठेगी */
         }
 
-        .profile-name {
-            font-size: 24px;
-            font-weight: bold;
+        /* Headings */
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #333;
-            margin: 20px 0;
+        h1 span {
+            color: #2ecc71;
         }
 
-        /* Features List Styling */
-        .features-list {
-            text-align: left;
-            display: inline-block;
+        /* Subtitle Features */
+        .sub-features {
+            list-style: none;
             margin-bottom: 25px;
         }
 
-        .feature-item {
-            color: #76ff03;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .feature-item span {
-            margin-right: 10px;
-            font-size: 22px;
-        }
-
-        /* Buttons Styling */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-            cursor: pointer;
-            text-decoration: none;
-            background: linear-gradient(to right, #9c27b0, #00bcd4);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.02);
-        }
-
-        /* Timer Styling */
-        .timer-container {
+        .sub-features li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            align-items: center;
+            gap: 8px;
         }
 
-        .timer-box {
-            text-align: center;
+        /* Main Telegram Button */
+        .btn-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background: #2ecc71;
+            color: #11161a;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            box-shadow: 0px 4px 15px rgba(46, 204, 113, 0.3);
+            transition: transform 0.2s, background 0.2s;
         }
 
-        .timer-num {
-            color: #ff0000;
-            font-size: 24px;
+        .btn-main:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        /* Features List Card */
+        .features-card {
+            background: #1c2733;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .features-card ul {
+            list-style: none;
+        }
+
+        .features-card li {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .features-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-icon {
+            background: #2ecc71;
+            color: #1c2733;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
             font-weight: bold;
-            font-family: monospace;
         }
 
-        .timer-label {
-            color: #8b0000;
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background: #1c2733;
+            padding: 12px 5px;
+            border-radius: 12px;
+        }
+
+        .stat-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .stat-box h3.green-text {
+            color: #2ecc71;
+        }
+
+        .stat-box p {
             font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 4px;
+            color: #9aa0a6;
+            margin-top: 2px;
         }
 
-        .timer-colon {
-            color: #ff0000;
-            font-size: 24px;
-            font-weight: bold;
-            align-self: flex-start;
+        /* Secondary Outline Button */
+        .btn-outline {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid #2ecc71;
+            color: #2ecc71;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #2ecc71;
+            color: #11161a;
+        }
+
+        /* Footer Disclaimer */
+        .disclaimer {
+            font-size: 10px;
+            color: #7f8c8d;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        .disclaimer strong {
+            color: #f1c40f;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header Text -->
-        <div class="header-title">
-            Learn Before You Trade<br>Smart Traders Keep Learning
-        </div>
-
-        <!-- Profile Section -->
-        <div class="profile-container">
-            <!-- Aap yahan apni image lagane ke liye src badal sakte hain -->
-            <img src="https://i.ibb.co/FLPgSBHk/Tu-Q5o-VVl-Wgq-Es-Mq8s-R-2hrw6z-4-CQym-G1-ALaj-CU5jp-Ww-YLd4g618x-YBA7o68d-Oy-XHCSPC6ja-Synh-Uu-Pj-R3-W.jpg" alt="Purab Darda ( SEBI REGISTERED )">
-        </div>
-        <div class="profile-name">Purab Darda ( SEBI REGISTERED )</div>
-
-        <hr>
-
-        <!-- Features Bullet Points -->
-        <div class="features-list">
-            <div class="feature-item"><span>✔</span> Market Basics</div>
-            <div class="feature-item"><span>✔</span> Chart Reading</div>
-            <div class="feature-item"><span>✔</span> Trend Analysis</div>
-            <div class="feature-item"><span>✔</span> Educational Discussions</div>
-        </div>
-
-        <hr>
-
-        <!-- CTA Buttons -->
-        <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn">JOIN TELEGRAMM GROUPS</a>
-        <a href="https://t.me/+Z7bTtxu4N4ZhNThl
-            " class="btn">JOIN TELEGRAMM GROUPS</a>
-
-        <!-- Countdown Timer -->
-        <div class="timer-container">
-            <div class="timer-box">
-                <div class="timer-num" id="days">00</div>
-                <div class="timer-label">Days</div>
-            </div>
-            <div class="timer-colon">:</div>
-            <div class="timer-box">
-                <div class="timer-num" id="hours">00</div>
-                <div class="timer-label">Hours</div>
-            </div>
-            <div class="timer-colon">:</div>
-            <div class="timer-box">
-                <div class="timer-num" id="minutes">00</div>
-                <div class="timer-label">Minutes</div>
-            </div>
-            <div class="timer-colon">:</div>
-            <div class="timer-box">
-                <div class="timer-num" id="seconds">24</div>
-                <div class="timer-label">Seconds</div>
+        
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <div class="logo-circle">
+                <!-- आपकी फोटो यहाँ जोड़ दी गई है -->
+                <img src="https://i.ibb.co/FLPgSBHk/Tu-Q5o-VVl-Wgq-Es-Mq8s-R-2hrw6z-4-CQym-G1-ALaj-CU5jp-Ww-YLd4g618x-YBA7o68d-Oy-XHCSPC6ja-Synh-Uu-Pj-R3-W.jpg" alt="Purab Darda">
             </div>
         </div>
+
+        <!-- Main Heading (SEBI Registered हटा दिया गया है विसंगति से बचने के लिए) -->
+        <h1>Purab Darda</h1>
+
+        <!-- Header bullet info -->
+        <ul class="sub-features">
+            <li>📈 Daily Market Updates</li>
+            <li>🔥 NIFTY • BANKNIFTY Analysis</li>
+            <li>💰 Smart Trading Community</li>
+        </ul>
+
+        <!-- Main Action Button -->
+        <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn-main">
+            🚀 JOIN TELEGRAM NOW
+        </a>
+
+        <!-- Premium Features List -->
+        <div class="features-card">
+            <ul>
+                <li><span class="check-icon">✓</span> Daily Trading Signals</li>
+                <li><span class="check-icon">✓</span> Market Learning & Analysis</li>
+                <li><span class="check-icon">✓</span> Live Trading Updates</li>
+                <li><span class="check-icon">✓</span> Beginner Friendly Community</li>
+            </ul>
+        </div>
+
+        <!-- Stats Boxes -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3 class="green-text">50K+</h3>
+                <p>Members</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="green-text">24/7</h3>
+                <p>Updates</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="green-text">95%</h3>
+                <p>Analysis</p>
+            </div>
+        </div>
+
+        <!-- Secondary Button -->
+        <div>
+            <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn-outline">
+                🔥 JOIN FREE CHANNEL NOW
+            </a>
+        </div>
+
+        <!-- Disclaimer Footer -->
+        <p class="disclaimer">
+            <strong>⚠️ Stock Market Investments Are Subject To Market Risks.</strong><br>
+            Disclaimer: Educational Purpose Only. Not SEBI Registered.
+        </p>
+
     </div>
-
-    <!-- JavaScript for 24-Second Loop Timer -->
-    <script>
-        let timeLeft = 24;
-        const secondsElement = document.getElementById('seconds');
-
-        setInterval(() => {
-            if (timeLeft <= 0) {
-                timeLeft = 24; // Timer khatam hone par wapas 24 se start hoga
-            } else {
-                timeLeft--;
-            }
-            secondsElement.innerText = timeLeft < 10 ? '0' + timeLeft : timeLeft;
-        }, 1000);
-    </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
