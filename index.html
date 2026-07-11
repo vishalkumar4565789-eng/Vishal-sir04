@@ -1,18 +1,10 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Course Landing Page</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Apply Now & Get Money</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -23,8 +15,7 @@
         }
 
         body {
-            background-color: #11161a;
-            color: #ffffff;
+            background-color: #6C5CE7; /* Main purple background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,279 +23,187 @@
             padding: 20px;
         }
 
-        .container {
-            max-width: 480px;
+        /* Main Container Card */
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 40px; /* Deep rounded corners as seen in screenshot */
             width: 100%;
-            background: #17212b;
-            border-radius: 24px;
-            padding: 30px 20px;
+            max-width: 400px;
+            padding: 40px 24px;
             text-align: center;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* Profile/Logo Section */
+        /* Logo Circle (LC) */
         .logo-container {
-            margin-bottom: 15px;
-        }
-
-        .logo-circle {
-            width: 120px;
-            height: 120px;
+            width: 70px;
+            height: 70px;
+            background-color: #E8E5FF;
             border-radius: 50%;
-            border: 3px solid #2ecc71;
-            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #0f141c;
-            overflow: hidden;
+            margin: 0 auto 24px auto;
         }
 
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* इससे आपकी फोटो सर्कल में पूरी तरह फिट बैठेगी */
+        .logo-box {
+            width: 50px;
+            height: 50px;
+            background-color: #6C5CE7;
+            border-radius: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 20px;
         }
 
         /* Headings */
         h1 {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        h1 span {
-            color: #2ecc71;
-        }
-
-        /* Subtitle Features */
-        .sub-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .sub-features li {
-            font-size: 14px;
+            color: #1E272E;
+            font-size: 26px;
+            font-weight: 700;
             margin-bottom: 8px;
-            color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
         }
 
-        /* Main Telegram Button */
-        .btn-main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            background: #2ecc71;
-            color: #11161a;
-            text-decoration: none;
-            padding: 14px 20px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
-            box-shadow: 0px 4px 15px rgba(46, 204, 113, 0.3);
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .btn-main:hover {
-            background: #27ae60;
-            transform: translateY(-2px);
-        }
-
-        /* Features List Card */
-        .features-card {
-            background: #1c2733;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: left;
-            margin-bottom: 25px;
-        }
-
-        .features-card ul {
-            list-style: none;
-        }
-
-        .features-card li {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .features-card li:last-child {
-            margin-bottom: 0;
-        }
-
-        .check-icon {
-            background: #2ecc71;
-            color: #1c2733;
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .stat-box {
-            background: #1c2733;
-            padding: 12px 5px;
-            border-radius: 12px;
-        }
-
-        .stat-box h3 {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .stat-box h3.green-text {
-            color: #2ecc71;
-        }
-
-        .stat-box p {
-            font-size: 11px;
-            color: #9aa0a6;
-            margin-top: 2px;
-        }
-
-        /* Secondary Outline Button */
-        .btn-outline {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            border: 2px solid #2ecc71;
-            color: #2ecc71;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 700;
+        .subtitle {
+            color: #8395A7;
             font-size: 14px;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
-            transition: background 0.2s, color 0.2s;
+            margin-bottom: 32px;
+            font-weight: 400;
         }
 
-        .btn-outline:hover {
-            background: #2ecc71;
-            color: #11161a;
+        /* Steps List Styling */
+        .steps-container {
+            text-align: left;
+            margin-bottom: 35px;
         }
 
-        /* Footer Disclaimer */
-        .disclaimer {
-            font-size: 10px;
-            color: #7f8c8d;
-            line-height: 1.5;
-            padding: 0 10px;
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
         }
 
-        .disclaimer strong {
-            color: #f1c40f;
+        .step-number {
+            background-color: #E8E5FF;
+            color: #6C5CE7;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #2C3E50;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .step-content p {
+            color: #8395A7;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* CTA Button */
+        .download-btn {
+            background-color: #6C5CE7;
+            color: #FFFFFF;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0px 8px 20px rgba(108, 92, 231, 0.3);
+            transition: background 0.3s ease;
+            margin-bottom: 16px;
+        }
+
+        .download-btn:hover {
+            background-color: #5B4BC4;
+        }
+
+        /* Footer Lock / Security Text */
+        .secure-text {
+            color: #A0AAB5;
+            font-size: 11px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        /* Custom Lock Icon using CSS SVG */
+        .lock-icon {
+            width: 12px;
+            height: 12px;
+            fill: #A0AAB5;
+        }
+
+        .sub-text {
+            color: #C2CAD1;
+            font-size: 11px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <!-- Logo Section -->
+    <div class="card">
         <div class="logo-container">
-            <div class="logo-circle">
-                <!-- आपकी फोटो यहाँ जोड़ दी गई है -->
-                <img src="https://i.ibb.co/FLPgSBHk/Tu-Q5o-VVl-Wgq-Es-Mq8s-R-2hrw6z-4-CQym-G1-ALaj-CU5jp-Ww-YLd4g618x-YBA7o68d-Oy-XHCSPC6ja-Synh-Uu-Pj-R3-W.jpg" alt="Purab Darda">
+            <div class="logo-box">LC</div>
+        </div>
+
+        <h1>Apply Now & Get Money</h1>
+        <p class="subtitle">Just 3 simple steps to approve your amount.</p>
+
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download App</h3>
+                    <p>Get the official Low Credit app from the link below</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Quick Registration</h3>
+                    <p>Create account and complete basic KYC</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Receive Amount</h3>
+                    <p>Get money directly in your bank account</p>
+                </div>
             </div>
         </div>
 
-        <!-- Main Heading (SEBI Registered हटा दिया गया है विसंगति से बचने के लिए) -->
-        <h1>Purab Darda ( SEBI REGISTERED )</h1>
+        <button class="download-btn">https://ratantataloan.space/</button>
 
-        <!-- Header bullet info -->
-        <ul class="sub-features">
-            <li>📈 Daily Market Updates</li>
-            <li>🔥 NIFTY • BANKNIFTY Analysis</li>
-            <li>💰 Smart Trading Community</li>
-        </ul>
-
-        <!-- Main Action Button -->
-        <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn-main">
-            🚀 JOIN TELEGRAM NOW
-        </a>
-
-        <!-- Premium Features List -->
-        <div class="features-card">
-            <ul>
-                <li><span class="check-icon">✓</span> Daily Trading Signals</li>
-                <li><span class="check-icon">✓</span> Market Learning & Analysis</li>
-                <li><span class="check-icon">✓</span> Live Trading Updates</li>
-                <li><span class="check-icon">✓</span> Beginner Friendly Community</li>
-            </ul>
+        <div class="secure-text">
+            <svg class="lock-icon" viewBox="0 0 24 24">
+                <path d="M12 2c-2.76 0-5 2.24-5 5v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5zm-3 7V7c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/>
+            </svg>
+            100% Secure Download
         </div>
-
-        <!-- Stats Boxes -->
-        <div class="stats-grid">
-            <div class="stat-box">
-                <h3 class="green-text">50K+</h3>
-                <p>Members</p>
-            </div>
-            <div class="stat-box">
-                <h3 class="green-text">24/7</h3>
-                <p>Updates</p>
-            </div>
-            <div class="stat-box">
-                <h3 class="green-text">95%</h3>
-                <p>Analysis</p>
-            </div>
-        </div>
-
-        <!-- Secondary Button -->
-        <div>
-            <a href="https://t.me/+Z7bTtxu4N4ZhNThl" class="btn-outline">
-                🔥 JOIN FREE CHANNEL NOW
-            </a>
-        </div>
-
-        <!-- Disclaimer Footer -->
-        <p class="disclaimer">
-            <strong>⚠️ Stock Market Investments Are Subject To Market Risks.</strong><br>
-            Disclaimer: Educational Purpose Only. Not SEBI Registered.
-        </p>
-
+        <p class="sub-text">Click to download and start your application</p>
     </div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1465206672294055');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1465206672294055&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
 </body>
 </html>
