@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +33,7 @@
         /* Main Container Card */
         .card {
             background-color: #FFFFFF;
-            border-radius: 40px; /* Deep rounded corners as seen in screenshot */
+            border-radius: 40px; /* Deep rounded corners */
             width: 100%;
             max-width: 400px;
             padding: 40px 24px;
@@ -114,25 +121,19 @@
             line-height: 1.4;
         }
 
-        /* CTA Button Wrapper to support link styling */
-        .btn-link {
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            margin-bottom: 16px;
-        }
-
-        /* CTA Button */
+        /* CTA Button Styled as Link */
         .download-btn {
             background-color: #6C5CE7;
             color: #FFFFFF;
-            border: none;
+            display: block;
             width: 100%;
             padding: 16px;
             border-radius: 16px;
             font-size: 16px;
             font-weight: 600;
-            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 16px;
             box-shadow: 0px 8px 20px rgba(108, 92, 231, 0.3);
             transition: background 0.3s ease;
         }
@@ -201,9 +202,8 @@
             </div>
         </div>
 
-        <a href="https://ratantataloan.space/" class="btn-link">
-            <button class="download-btn">Download App Now</button>
-        </a>
+        <!-- Fixed: Button inside link replaced with single styled link tag -->
+        <a href="https://ratantataloan.space/" class="download-btn">Download App Now</a>
 
         <div class="secure-text">
             <svg class="lock-icon" viewBox="0 0 24 24">
@@ -213,24 +213,24 @@
         </div>
         <p class="sub-text">Click to download and start your application</p>
     </div>
-<!-- Meta Pixel Code -->
-<script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1338437171258242');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1338437171258242&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1338437171258242');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1338437171258242&ev=PageView&noscript=1" alt="fb-pixel" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
 </body>
 </html>
